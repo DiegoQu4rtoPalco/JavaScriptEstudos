@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inciando com DOM</title>
+    <style>
+    body{
+        background: black;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <!--Aqui fazendo um TÍTULO em tamanho <h1>-->
+    <h1>Exemplos em h1:</h1> 
+        <h2>Em h2</h2>
+        <h3>Em h3</h3>
+        <h4>Em h4</h4>
+        <h5>Em h5</h5>
+        <h6>Em h6</h6>
+        <h1>Exemplo tag 2</h1>
+
+        <div name = "msg1"> Usando método name</div>
+        <div class = "msg2">Usando método classe</div>
+        <div id = "msg3">Usando método id</div>
+        <div id = "msg4">Usando método querySelector em div id</div>
+        <div class = "msg5">Usando método querySelector em div id</div>
+        
+        <script>
+        //Vamos mudar a cor da fonte h1.
+        var tagH1 = window.document.getElementsByTagName("h1")[0];
+        tagH1.style.color = "red"; 
+        /* Observe que a cor muda, em colchetes selecionamos o qual dos h1 a usar, 
+        vamos dar exemplo de um outro h1 e repare no colchetes.
+        */
+        var tagH2 = window.document.getElementsByTagName("h1")[1];
+        tagH2.style.background = "blue";
+        tagH2.style.color = "yellow"
+
+        //Trabalhando com div em body e editando em JavaScript
+        var tagName = window.document.getElementsByName("msg1")[0];
+        tagName.innerText = "Mudando a frase, método name a frase era (Usando método name)";
+
+        //Agora vamos usar em classe
+        var classMsg2 = window.document.getElementsByClassName("msg2")[0];
+        classMsg2.innerHTML = "Mudando a frase, método class a frase era (Usando método classe)";
+
+        //Agora vamos usar id.
+        var idMsg3 = window.document.getElementById("msg3");
+        idMsg3.innerText = "Mudando a frase, método id a frase era (Usando método id)";
+
+        //Agora o método mais novo querySelector, observe # é uma div id e quando se é . é uma classe
+        var queryMs4 = window.document.querySelector("div#msg4");
+        queryMs4.innerText = "Mudando a frase, método querySelector a frase era (Usando método querySelector em div id)"
+
+        //Exemplo com classe
+        var queryMs5 = window.document.querySelector("div.msg5");
+        queryMs5.innerText = "Mudando a frase, método querySelector a frase era (Usando método querySelector em classe)"
+        
+
+        </script>
+</body>
+</html>
