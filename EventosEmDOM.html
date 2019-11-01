@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eventos em DOM </title>
+    <style>
+        div#acesso{
+            font: normal 15pt Arial;
+            background: rgb(167, 167, 238);
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Eventos em DOM método 1</h2>
+    <div id = "acesso" onclick="clicou()"  onmouseenter = "acessou()" onmouseout="desasesso()">
+    Null ...
+    </div>
+    
+    <script>
+    var acesso = window.document.getElementById("acesso");
+    function clicou(){
+        acesso.innerText = "Clicou" // Ao clicar frase mudarar
+        acesso.style.background = "black"; // Ao clicar fundo mudar de cor preta
+        acesso.style.color = "white"; // Se deve mudar a cor da fonte  por que o fundo vai ficar preto ao clicar
+        
+    }
+    function acessou(){
+        acesso.innerText = "Acesso"; // Quando passa o mouse em cima da div a frase muda
+    }
+    function desasesso(){
+        acesso.innerText = "Null"; // ele faz oposto da function acessou.
+        acesso.style.background = "rgb(167, 167, 238)" // Volta para cor do background usado em CSS.
+    }
+    </script>
+</body>
+</html>
