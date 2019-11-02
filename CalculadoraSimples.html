@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora Simples</title>
+    <style>
+    body{
+        font: normal 18px Arial;
+    }
+    input{
+        font: normal 15px Arial;
+        background: rgb(200, 200, 221);
+        
+
+    }
+    div#res{
+        margin-top: 10px;
+        background: rgb(173, 173, 219);
+        width: 477px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Somando: </h1>
+    <!--Adionando caixa 1 aonde pedirar pra digitar um numero-->
+    <input type="number" value="caixa1" id = "caixa1"> + 
+    <input type="number" value="caixa2" id = "caixa2">
+    <!--Adicionando botão-->
+    <input type="button" value="Somar" onclick="somar()">
+    <!--Adicionadno div resultado-->
+    <div id = "res">Resultado: </div>
+  
+    <script>
+    function somar(){
+
+        //Adicionando váriaveis 
+        var n1 = window.document.getElementById("caixa1"); 
+        var n2 = window.document.querySelector("input#caixa2");
+        var res = window.document.querySelector("div#res");
+
+        //Agora vamos converter as váriaveis para numeros.
+        var numero1 = Number.parseInt(n1.value); //Pode se usar Number.parseInt ou apenas Number.
+        var numero2 = Number(n2.value);
+        var soma = numero1 + numero2; //Numero convertido agora podemos somar
+        res.innerHTML = `A soma entre ${numero1} e ${numero2} = ${soma}`; //Resultado da soma 
+ 
+    }
+    </script>
+
+
+</body>
+</html>
